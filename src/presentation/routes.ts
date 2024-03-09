@@ -1,16 +1,15 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import { WhatsappRoutes } from "./whatsapp/router";
 
 
 
 
 export class AppRoutes{
+    
     static get routes(): Router{
         const router =  Router();
 
-        router.get('/respuestas',(req:Request,res:Response)=>{
-            console.log("entro");
-            res.send('hola');
-        });
+        router.use('/respuestas',WhatsappRoutes.routes);
 
         return router;
     }
