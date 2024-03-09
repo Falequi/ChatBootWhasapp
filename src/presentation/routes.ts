@@ -7,7 +7,7 @@ export class AppRoutes{
     static get routes(): Router{
         const router =  Router();
 
-        router.use('/respuestas',(req:Request,res:Response)=>{
+        router.get('/respuestas',(req:Request,res:Response)=>{
             console.log("entro");
             res.send('hola');
         });
